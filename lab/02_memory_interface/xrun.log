@@ -1,0 +1,59 @@
+TOOL:	xrun(64)	25.03-s001: Started on Nov 03, 2026 at 10:58:54 PKT
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: mem_intf.sv
+	interface worklib.mem_intf:sv
+		errors: 0, warnings: 0
+file: mem.sv
+	module wofile: mem_intf.sv
+	interface worklib.mem_intf:sv
+		errors: 0, warnings: 0
+file: mem.sv
+	module worklib.mem:sv
+		errors: 0, warnings: 0
+file: mem_test.sv
+	module worklib.m	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mem:sv <0x4fe5d279>
+			streams:   3, words:  1250
+		worklib.mem_test:sv <0x6d192578>
+			streams:   4, words:  8182
+		worklib.top:sv <0x67abd73c>
+			streams:   4, words:  1306
+		worklib.mem_intf:sv <0x7de8f939>
+			streams:   2, words:  4955
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Interfaces:              1       1
+		Registers:              27      27
+		Scalar wires:            1       -
+		Always blocks:           2       2
+		Initial blocks:          4       4
+		Pseudo assignments:      1       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+xcelium> source /eda/tools/cadence/xc/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+LAB 5 ACTIVITY 2: memory interface and modports
+
+STEP 1: clear memory through interface methods
+MLAB 5 ACTIVITY 2: memory interface and modports
+
+STEP 1: clear memory through interface methods
+MEMORY_CLEAR_PASS checks=32
+
+STEP 2: address-as-data test through interface methods
+MEMORY_ADDRESS_PASS checks=32
+
+LAB5_MEMORY_INTERFACE_PASS total_chxcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 03, 2026 at 10:59:00 PKT  (total: 00:00:06)
+lium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 03, 2026 at 10:59:00 PKT  (total: 00:00:06)

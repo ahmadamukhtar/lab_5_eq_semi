@@ -1,0 +1,61 @@
+xrun(64): 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.03-s001: Started on Nov 03, 2026 at 10:32:00 PKT
+xrun
+	-64bit
+	-f sources.f
+		mem.sv
+		mem_test.sv
+		top.sv
+	-top top
+	-access +rwc
+file: mem.sv
+	module worklib.mem:sv
+		errors: 0, warnings: 0
+file: mem_test.sv
+	module worklib.mem_test:sv
+		errors: 0, warnings: 0
+file: top.sv
+	module worklib.top:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		top
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mem:sv <0x60f712ce>
+			streams:   3, words:  1237
+		worklib.mem_test:sv <0x1c390f25>
+			streams:   6, words: 13433
+		worklib.top:sv <0x20ea371f>
+			streams:  14, words:  3706
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 3       3
+		Registers:              32      32
+		Scalar wires:            8       -
+		Vectored wires:          9       -
+		Always blocks:           2       2
+		Initial blocks:          4       4
+		Pseudo assignments:     11       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+xcelium> source /eda/tools/cadence/xc/XCELIUM2503/tools/xcelium/files/xmsimrc
+xcelium> run
+LAB 5 ACTIVITY 1: memory tasks and functions
+
+STEP 1: clear memory and verify all 32 addresses
+MEMORY_CLEAR_PASS checks=32
+
+STEP 2: write address as data and verify all locations
+MEMORY_ADDRESS_PASS checks=32
+
+LAB5_MEMORY_SUBPROGRAMS_PASS total_checks=64
+Simulation complete via $finish(1) at time 2550 NS + 1
+./mem_test.sv:118         $finish;
+xcelium> exit
+TOOL:	xrun(64)	25.03-s001: Exiting on Nov 03, 2026 at 10:32:07 PKT  (total: 00:00:07)
