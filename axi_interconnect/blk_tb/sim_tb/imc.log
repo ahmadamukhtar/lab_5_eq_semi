@@ -1,0 +1,4 @@
+imc: *I,imc.tool.cov.version.diff: "There is a difference between the IMC tool version 21.09 and the coverage version 23.03-s001"
+IMC(64): 21.09-s001: (c) Copyright 1995-2021 Cadence Design Systems Inc - Simulator version: 23.03-s001 - Coverage engine version: 23.03-s001
+Starting gui mode
+imc: *I,RUNLD: Successfully loaded run /home/amukhtar/ahmad-mukhtar/Acacia/edge-ai-eqsemi/design/axi_interconnect/blk_tb/sim_tb/cov_work/scope/axi_ic_stress_test.

@@ -1,0 +1,41 @@
+# ==============================================================================
+# Copyright (c) Empty Quarter Semiconductor Co. - EQSemi
+# All rights reserved.
+# EQSEMI CONFIDENTIAL -- do not copy, disclose or distribute without written permission.
+# ------------------------------------------------------------------------------
+# Project       : edge-ai-eqsemi
+# File          : design/axi_interconnect/axi_interconnect_rtl.yaml
+# Author(s)     : <author><email>
+# Last Modified : 2026-11-01
+# ==============================================================================
+# BRIX cluster: axi_interconnect
+# Schema: README.md (BRIX YAML reference)
+# ==============================================================================
+
+cluster: axi_2x9_interconnect
+top_module: axi4_lite_2x9_interconnect
+description: AXI4-Lite 2 manager -> 9 subordinate interconnect (two fixed-priority arbiters + 1x9 routing)
+
+dependencies:
+  - arbiter
+  - axi_1x9_interconnect
+
+vlog_files:
+  - ${PROJ_DIR}/design/axi_interconnect/rtl/axi4_lite_2x9_interconnect.sv
+vlog_opts: []
+incdirs: []
+
+testbench:
+  - ${PROJ_DIR}/design/axi_interconnect/sim/tb/axi_lite_slave_model.sv
+  - ${PROJ_DIR}/design/axi_interconnect/sim/tb/tb_axi_lite_2x9.sv
+tb_top: tb_axi_lite_2x9
+sim_pass_regex: '\[2x9 TB\] PASS:'
+
+sdc: []
+
+lint:
+  rtl_waiver: ${PROJ_DIR}/design/axi_interconnect/lint/axi_interconnect_rtl_waiver.tcl
+  cdc_waiver: ${PROJ_DIR}/design/axi_interconnect/lint/axi_interconnect_cdc_waiver.tcl
+  rdc_waiver: ${PROJ_DIR}/design/axi_interconnect/lint/axi_interconnect_rdc_waiver.tcl
+
+libs: []
