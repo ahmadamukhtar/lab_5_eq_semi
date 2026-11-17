@@ -1,0 +1,6 @@
+xrun: 23.03-s001: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun	23.03-s001: Started on Nov 08, 2026 at 03:54:24 PKT
+xrun
+	--version
+xrun: *E,NOSOPT1: Unknown option (--version).
+TOOL:	xrun	23.03-s001: Exiting on Nov 08, 2026 at 03:54:24 PKT  (total: 00:00:00)
